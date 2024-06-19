@@ -28,9 +28,6 @@ export default function Index() {
                 <Link href={"/addBook/addBook"}>adicionar livro</Link>
             </View>
         </View>
-
-
-
     );
 }
 
@@ -90,9 +87,7 @@ const styles = StyleSheet.create({
 
     },
     buttonText: {
-
-
-        color: 'rgba(0, 0, 0, 1)',
+        color: 'rgba(0, 0, 0,)',
         fontFamily: "Inknut-Antiqua",
         textAlign: 'center',
         fontWeight: 'bold',
@@ -121,6 +116,4 @@ const styles = StyleSheet.create({
         fontFamily: "Inknut-Antiqua",
 
     }
-
-
 });
