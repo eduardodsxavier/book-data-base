@@ -9,7 +9,6 @@ export default function redefinir() {
         </View>
 
     );
-
 }
 
 const styles = StyleSheet.create({
