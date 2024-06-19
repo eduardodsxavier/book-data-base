@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#8B4513',
+        backgroundColor: '#572A15',
         padding: 10,
     },
     headerText: {
@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         borderWidth: 3,
         borderColor: 'rgba(103,42,21,0.50)',
-
     },
     reviewTitle: {
         fontSize: 18,
