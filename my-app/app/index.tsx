@@ -6,11 +6,6 @@ import { Link } from 'expo-router';
 export default function Index() {
     return (
         <View style={styles.container}>
-             <View style ={styles.barratopo}>
-             
-                <Text style={styles.logo}>Bdb</Text>
-
-            </View>
             <View style={styles.loginBox}>
                 <View style={styles.topBox}>
                     <Text style={styles.login}> Login</Text>
@@ -31,13 +26,8 @@ export default function Index() {
 
                 <Link href={"redefinir"} style={styles.senha}>esqueceu sua senha?</Link>
                 <Link href={"/addBook/addBook"}>adicionar livro</Link>
-                <Link href={"/addBook/redefinirteste"}> teste</Link>
-                <Link href={" /cadastro"}> cadastro</Link>
             </View>
         </View>
-
-
-
     );
 }
 
@@ -55,7 +45,7 @@ const styles = StyleSheet.create({
         paddingTop: 0,
         paddingLeft: 0,
         paddingRight: 0,
-        width: '40%',
+        width: '90%',
         padding: 20,
         backgroundColor: "#AA9679",
         borderRadius: 10,
@@ -79,7 +69,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'rgba(255, 255, 255, 0.44)',
         height: 40,
-        width: 400,
+        width: '75%',
         borderColor: 'rgba(103, 42, 21, 0.25)',
         borderWidth: 1,
         marginBottom: 15,
@@ -89,7 +79,7 @@ const styles = StyleSheet.create({
 
     },
     button: {
-        width: '20%',
+        width: '25%',
         alignSelf: 'center',
         backgroundColor: 'rgba(103, 42, 21, 0.28)',
         paddingVertical: 10,
@@ -97,9 +87,7 @@ const styles = StyleSheet.create({
 
     },
     buttonText: {
-
-
-        color: 'rgba(0, 0, 0, 1)',
+        color: 'rgba(0, 0, 0,)',
         fontFamily: "Inknut-Antiqua",
         textAlign: 'center',
         fontWeight: 'bold',
@@ -127,39 +115,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         fontFamily: "Inknut-Antiqua",
 
-    },
-
-    barratopo:{
-        position: 'absolute', 
-        top: 0, 
-        backgroundColor:'#572A15',
-        width:'100%',
-        height: 40, 
-        alignItems: 'center', // Centraliza conteúdo horizontalmente
-        shadowColor: 'rgba(87, 42, 21, 1)', // Cor da sombra
-        shadowOffset: { width: 0, height: 2 }, // Offset da sombra
-        shadowOpacity: 0.8, // Opacidade da sombra
-        shadowRadius: 2, // Raio da sombra
-        elevation: 5, // Elevação da sombra (apenas para Android)
-        zIndex: 10,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        left: 0,
-        padding: 25,
-
-
-
-    },
-    logo:{
-        color: '#000000',
-        fontSize: 30,
-        fontWeight: 'bold',
-        backgroundColor: '#A34D10',
-        paddingHorizontal: 10,
-        borderRadius: 15,
-
-
-    },
+    }
 
 
 });

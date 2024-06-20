@@ -1,9 +1,7 @@
-// File: App.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet, ScrollView, Touchable } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
-import { Rating } from 'react-native-ratings';
-
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { Rating, AirbnbRating } from 'react-native-ratings';
+import { Link } from 'expo-router';
 const App = () => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
@@ -11,7 +9,6 @@ const App = () => {
     const [publisher, setPublisher] = useState('');
     const [pages, setPages] = useState('');
     const [volume, setVolume] = useState('');
-    const [tags, setTags] = useState('');
     const [readYear, setReadYear] = useState('');
     const [review, setReview] = useState('');
     const [synopsis, setSynopsis] = useState('');
@@ -25,7 +22,6 @@ const App = () => {
             publisher,
             pages,
             volume,
-            tags,
             readYear,
             review,
             synopsis,
@@ -84,17 +80,6 @@ const App = () => {
                 keyboardType="numeric"
             />
 
-            <Picker
-                selectedValue={tags}
-                style={styles.picker}
-                onValueChange={(itemValue) => setTags(itemValue)}
-            >
-                <Picker.Item label="Adicionar Tag" value="" />
-                <Picker.Item label="Ficção" value="ficcao" />
-                <Picker.Item label="Não-Ficção" value="romance" />
-                {/* adicionar outras tags */}
-            </Picker>
-
             <TextInput
                 style={styles.input}
                 placeholder="Ano Lido"
@@ -109,6 +94,10 @@ const App = () => {
                     showRating
                     onFinishRating={setRating}
                     style={styles.rating}
+                    imageSize={30}
+                    ratingColor="#FFD700"
+                    ratingBackgroundColor="#BDB76B"
+                    startingValue={rating}
                 />
             </View>
 
@@ -131,7 +120,8 @@ const App = () => {
             />
             <View style={styles.input}>
                 <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                    <Text style={{ color: '#fff', textAlign: 'center' }}>Enviar</Text>
+                    <Text style={{ color: '#2f1a0d', textAlign: 'center' }}>Enviar</Text>
+                    <Link href={"/BookPage/bookPage"}></Link>
                 </TouchableOpacity>
             </View>
         </ScrollView>
@@ -149,7 +139,7 @@ const styles = StyleSheet.create({
         height: 150,
         marginBottom: 20,
         backgroundColor: '#ddd',
-        borderRadius: 5,
+        borderRadius: 25,
         borderWidth: 1,
         borderColor: '#999',
     },
@@ -163,14 +153,6 @@ const styles = StyleSheet.create({
         padding: 10,
         marginBottom: 10,
         borderRadius: 25,
-        backgroundColor: '#e6ddcf',
-    },
-    picker: {
-        borderWidth: 1,
-        borderColor: '#ccc',
-        padding: 10,
-        marginBottom: 10,
-        borderRadius: 5,
         backgroundColor: '#fff',
     },
     textArea: {
@@ -187,10 +169,10 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
     },
     button: {
-        backgroundColor: '#007BFF',
+        backgroundColor: '#DABF98',
         color: '#fff',
         padding: 10,
-        borderRadius: 5,
+        borderRadius: 13,
     },
 });
 

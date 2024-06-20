@@ -32,7 +32,6 @@ export default function redefinir() {
         
 
     );
-
 }
 
 const styles = StyleSheet.create({
