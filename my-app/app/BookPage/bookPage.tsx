@@ -38,15 +38,13 @@ const BookPage = () => {
                 </View>
                 <View style={styles.buttonsContainer}>
                     <TouchableOpacity style={styles.buttonsContainer}>
-                        <text>Editar Resenha</text>
+                        <Text>Editar Resenha</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.buttonsContainer}>
-                        <text>SINOPSE</text>
+                        <Text>SINOPSE</Text>
                     </TouchableOpacity>
                 </View>
             </View>
-
-
 
         </ScrollView >
     );
@@ -135,11 +133,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     star: {
-        fontSize: 20,
+        fontSize: 26,
         color: '#FFD700',
     },
     starEmpty: {
-        fontSize: 20,
+        fontSize: 26,
         color: '#B0C4DE',
     },
     buttonsContainer: {

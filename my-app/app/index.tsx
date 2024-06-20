@@ -1,9 +1,13 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import { Link } from 'expo-router';
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function Index() {
+    const navigation = useNavigation();
+    const irParaTelaInicial = () => {
+        navigation.navigate("Main/main"); //Tem erro mas funciona!
+    };
     return (
         <View style={styles.container}>
             <View style={styles.containerMenu}>
@@ -23,17 +27,15 @@ export default function Index() {
                     placeholder="Password"
                     secureTextEntry
                 />
-                <TouchableOpacity style={styles.button} onPress={() => alert('Login pressed')}>
+                <TouchableOpacity style={styles.button} onPress={(irParaTelaInicial)}>
                     <Text style={styles.buttonText}>Entrar</Text>
                 </TouchableOpacity>
 
                 <Link href={"redefinir"} style={styles.senha}>esqueceu sua senha?</Link>
-                {/* <Link href={"/addBook/addBook"}>adicionar livro</Link> */}
             </View>
         </View>
     );
 }
-
 
 
 const styles = StyleSheet.create({
@@ -107,10 +109,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(103, 42, 21, 0.4)',
         width: '100%', // Define a largura da div como 100% da largura do loginBox
         height: '100%',
-
         flex: 1,
-
-
 
     },
     senha: {

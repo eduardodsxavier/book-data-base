@@ -4,8 +4,27 @@ import { Text, View, StyleSheet, TextInput, Button, TouchableOpacity } from "rea
 
 export default function redefinir() {
     return (
+
         <View style={styles.container}>
-            <Text>Página de redefinir</Text>
+            <View style={styles.barratopo}>
+                <Text style={styles.logo}>Bdb</Text>
+
+            </View>
+            <View style={styles.redefinirbox}>
+                <View style={styles.topbox}>
+                    <Text style={styles.texto}>Redefinir Senha</Text>
+                </View>
+
+                <Text style={styles.letra}> Por favor, se você não recer o e-mail, verifique sua pasta de spam ou entre em contato conosco para obter assistencia adicional </Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Email"
+                    keyboardType="email-address" />
+
+                <TouchableOpacity style={styles.button} onPress={() => alert('Login pressed')}>
+                    <Text style={styles.buttonText}>Enviar</Text>
+                </TouchableOpacity>
+            </View>
         </View>
 
     );
@@ -14,8 +33,128 @@ export default function redefinir() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#C2AB89",
+        flex: 1,
         justifyContent: "center",
         alignItems: "center",
+    },
+    barratopo: {
+        position: 'absolute',
+        top: 0,
+        backgroundColor: '#572A15',
+        width: '100%',
+        height: 40,
+        alignItems: 'center', // Centraliza conteúdo horizontalmente
+        shadowColor: 'rgba(87, 42, 21, 1)', // Cor da sombra
+        shadowOffset: { width: 0, height: 2 }, // Offset da sombra
+        shadowOpacity: 0.8, // Opacidade da sombra
+        shadowRadius: 2, // Raio da sombra
+        elevation: 5, // Elevação da sombra (apenas para Android)
+        zIndex: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        left: 0,
+        padding: 25,
 
     },
+    redefinirbox: {
+        paddingTop: 0,
+        paddingLeft: 0,
+        paddingRight: 0,
+        width: '90%',
+        height: '60%',
+        padding: 40,
+        backgroundColor: "#AA9679",
+        borderRadius: 10,
+        shadowColor: 'rgba(103, 42, 21, 0.99)',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 1.0,
+        shadowRadius: 10,
+        elevation: 5,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        paddingVertical: 40,
+        marginTop: 10, // Espaçamento superior
+    },
+    texto: {
+        color: '#261207',
+        alignSelf: 'center',
+        fontFamily: "Inknut-Antiqua",
+        fontSize: 25,
+        paddingTop: 0,
+
+    },
+    input: {
+        justifyContent: 'center',
+        alignSelf: 'center',
+        textAlign: 'center',
+        color: 'rgba(255, 255, 255, 0.44)',
+        height: '13%',
+        width: '70%',
+        borderColor: 'rgba(103, 42, 21, 0.25)',
+        borderWidth: 1,
+        marginBottom: 30,
+        paddingHorizontal: 10,
+        borderRadius: 20,
+        marginTop: 50,
+
+        alignItems: 'center',
+
+    },
+    button: {
+        width: '40%',
+        alignSelf: 'center',
+        backgroundColor: 'rgba(103, 42, 21, 0.28)',
+        paddingVertical: 10,
+        borderRadius: 20,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 30, // espaçamento interno superior 
+        marginBottom: 10, //espaçamento interno inferior
+    },
+    buttonText: {
+        flex: 1,
+
+        color: 'rgba(0, 0, 0, 1)',
+        fontFamily: "Inknut-Antiqua",
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 16,
+
+
+    },
+    letra: {
+        marginTop: 30,
+        color: '#261207',
+        alignSelf: 'center',
+        fontFamily: "Inknut-Antiqua",
+        fontSize: 15,
+
+
+    },
+    topbox: {
+        shadowColor: 'rgba(87, 42, 21, 1)',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 1.0,
+        borderTopEndRadius: 10,
+        borderTopLeftRadius: 10,
+        marginBottom: 20,
+        backgroundColor: 'rgba(103, 42, 21, 0.4)',
+        width: '100%',
+        flex: 1,
+
+
+
+    },
+    logo: {
+        color: '#000000',
+        fontSize: 30,
+        fontWeight: 'bold',
+        backgroundColor: '#A34D10',
+        paddingHorizontal: 10,
+        borderRadius: 15,
+
+
+    },
+
+
 });

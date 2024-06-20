@@ -1,90 +1,59 @@
-import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import { Rating, AirbnbRating } from 'react-native-ratings';
-import { Link } from 'expo-router';
+import { Rating } from 'react-native-ratings';
+import { useNavigation } from '@react-navigation/native';
+
+
 const App = () => {
-    const [title, setTitle] = useState('');
-    const [author, setAuthor] = useState('');
-    const [series, setSeries] = useState('');
-    const [publisher, setPublisher] = useState('');
-    const [pages, setPages] = useState('');
-    const [volume, setVolume] = useState('');
-    const [readYear, setReadYear] = useState('');
-    const [review, setReview] = useState('');
-    const [synopsis, setSynopsis] = useState('');
-    const [rating, setRating] = useState(0);
+    const navigation = useNavigation();
 
-    const handleSubmit = () => {
-        console.log({
-            title,
-            author,
-            series,
-            publisher,
-            pages,
-            volume,
-            readYear,
-            review,
-            synopsis,
-            rating,
-        });
+    const BookPageRedirect = () => {
+        navigation.navigate("BookPage/bookPage");
     };
-
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <TouchableOpacity style={styles.coverContainer}>
                 <Text style={styles.coverText}>Adicionar Capa</Text>
                 <Text style={styles.coverText}>+</Text>
             </TouchableOpacity>
+            <View style={styles.containerMenu}>
+                <Text style={styles.logo}>Bdb</Text>
+            </View>
 
             <TextInput
                 style={styles.input}
                 placeholder="Título"
-                value={title}
-                onChangeText={setTitle}
             />
 
             <TextInput
                 style={styles.input}
                 placeholder="Editora"
-                value={publisher}
-                onChangeText={setPublisher}
             />
 
             <TextInput
                 style={styles.input}
                 placeholder="Autor(a) do livro"
-                value={author}
-                onChangeText={setAuthor}
             />
 
             <TextInput
                 style={styles.input}
                 placeholder="Número de páginas"
-                value={pages}
-                onChangeText={setPages}
                 keyboardType="numeric"
             />
 
             <TextInput
                 style={styles.input}
                 placeholder="Série"
-                value={series}
-                onChangeText={setSeries}
             />
 
             <TextInput
                 style={styles.input}
                 placeholder="Volume"
-                value={volume}
-                onChangeText={setVolume}
                 keyboardType="numeric"
             />
 
             <TextInput
                 style={styles.input}
                 placeholder="Ano Lido"
-                value={readYear}
-                onChangeText={setReadYear}
                 keyboardType="numeric"
             />
 
@@ -92,20 +61,16 @@ const App = () => {
                 <Text style={styles.ratingLabel}>Nota</Text>
                 <Rating
                     showRating
-                    onFinishRating={setRating}
                     style={styles.rating}
                     imageSize={30}
                     ratingColor="#FFD700"
                     ratingBackgroundColor="#BDB76B"
-                    startingValue={rating}
                 />
             </View>
 
             <TextInput
                 style={[styles.input, styles.textArea]}
                 placeholder="Resenha"
-                value={review}
-                onChangeText={setReview}
                 multiline
                 numberOfLines={4}
             />
@@ -113,15 +78,12 @@ const App = () => {
             <TextInput
                 style={[styles.input, styles.textArea]}
                 placeholder="Sinopse do livro"
-                value={synopsis}
-                onChangeText={setSynopsis}
                 multiline
                 numberOfLines={4}
             />
             <View style={styles.input}>
-                <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                <TouchableOpacity style={styles.button} onPress={BookPageRedirect}>
                     <Text style={{ color: '#2f1a0d', textAlign: 'center' }}>Enviar</Text>
-                    <Link href={"/BookPage/bookPage"}></Link>
                 </TouchableOpacity>
             </View>
         </ScrollView>
@@ -138,6 +100,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: 150,
         marginBottom: 20,
+        marginTop: 80,
         backgroundColor: '#ddd',
         borderRadius: 25,
         borderWidth: 1,
@@ -173,6 +136,26 @@ const styles = StyleSheet.create({
         color: '#fff',
         padding: 10,
         borderRadius: 13,
+    },
+    containerMenu: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: '100%',
+        backgroundColor: '#572A15',
+        padding: 25,
+        zIndex: 1,
+    },
+    logo: {
+        color: '#000000',
+        fontSize: 30,
+        fontWeight: 'bold',
+        backgroundColor: '#A34D10',
+        paddingHorizontal: 10,
+        borderRadius: 15,
     },
 });
 
