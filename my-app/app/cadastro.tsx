@@ -11,24 +11,30 @@ export default function redefinir() {
             
         </View>
         <View style= { styles.redefinirbox}>
-        <View style={styles.loginBox}>
+        
         <View style= { styles.topbox}>
-            <Text style = {styles.texto}>Redefinir Senha</Text>
+            <Text style = {styles.texto}>Cadastro</Text>
         </View>
-
-        <Text style= { styles.letra}> Por favor, se você não recer o e-mail, verifique sua pasta de spam ou entre em contato conosco para obter assistencia adicional </Text>
             <TextInput     
              style={styles.input}
-              placeholder="Email"
-                keyboardType="email-address"/>
+              placeholder="Nome"
+                keyboardType="name-phone-pad"/>
+             <TextInput     
+             style={styles.input}
+              placeholder="Sobrenome"
+                keyboardType="name-phone-pad"/>
+             <TextInput     
+             style={styles.input}
+              placeholder="E-mail"
+                keyboardType="name-phone-pad"/>
               
-            <TouchableOpacity style={styles.button} onPress={() => alert('Login pressed')}>
+            <TouchableOpacity style={styles.button} onPress={() => alert('Cadastro pressed')}>
                     <Text style={styles.buttonText}>Enviar</Text>
             </TouchableOpacity>
             </View>
             </View>
            
-        </View>
+        
         
 
     );
@@ -50,8 +56,8 @@ const styles = StyleSheet.create({
         height: 40, 
         alignItems: 'center', // Centraliza conteúdo horizontalmente
         shadowColor: 'rgba(87, 42, 21, 1)', // Cor da sombra
-        shadowOffset: { width: 0, height: 2 }, // Offset da sombra
-        shadowOpacity: 0.8, // Opacidade da sombra
+        shadowOffset: { width: 0, height: 3 }, // Offset da sombra
+        shadowOpacity: 0.9, // Opacidade da sombra
         shadowRadius: 2, // Raio da sombra
         elevation: 5, // Elevação da sombra (apenas para Android)
         zIndex: 10,
@@ -60,7 +66,6 @@ const styles = StyleSheet.create({
         left: 0,
         padding: 25,
 
-        
        
 
 
@@ -105,11 +110,10 @@ const styles = StyleSheet.create({
         width: 400,
         borderColor: 'rgba(103, 42, 21, 0.25)',
         borderWidth: 1,
-        marginBottom: 30,
         paddingHorizontal: 10,
         borderRadius: 20,
-        marginTop: 50, 
-
+        marginBottom: 30, 
+        padding: 10,
         alignItems: 'center',
 
     }, 
@@ -121,8 +125,9 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 30, // espaçamento interno superior 
-        marginBottom: 10, //espaçamento interno inferior
+        marginTop: 20,
+         // espaçamento interno superior 
+        
     },
     buttonText:{
         flex: 1,
@@ -153,8 +158,8 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         backgroundColor: 'rgba(103, 42, 21, 0.4)',
         width: '100%', 
-        height: 'auto',
-        flex: 1,
+        height: '10%',
+        
         
         
 
@@ -169,6 +174,7 @@ const styles = StyleSheet.create({
 
 
     },
+
 
 
 });
